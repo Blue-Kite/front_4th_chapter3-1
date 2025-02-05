@@ -198,24 +198,18 @@ describe('getEventsForDay', () => {
     const result = getEventsForDay(events, 18);
 
     expect(result).toHaveLength(0);
-
-    expect(result).toEqual([]);
   });
 
   it('날짜가 0일 경우 빈 배열을 반환한다', () => {
     const result = getEventsForDay(events, 0);
 
     expect(result).toHaveLength(0);
-
-    expect(result).toEqual([]);
   });
 
   it('날짜가 32일 이상인 경우 빈 배열을 반환한다', () => {
     const result = getEventsForDay(events, 32);
 
     expect(result).toHaveLength(0);
-
-    expect(result).toEqual([]);
   });
 });
 
