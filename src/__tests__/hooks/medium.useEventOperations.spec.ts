@@ -1,4 +1,4 @@
-import { act, renderHook } from '@testing-library/react';
+import { act, renderHook, waitFor } from '@testing-library/react';
 import { http, HttpResponse } from 'msw';
 
 import {
@@ -10,7 +10,48 @@ import { useEventOperations } from '../../hooks/useEventOperations.ts';
 import { server } from '../../setupTests.ts';
 import { Event } from '../../types.ts';
 
-it('저장되어있는 초기 이벤트 데이터를 적절하게 불러온다', async () => {});
+const events: Event[] = [
+  {
+    id: '1',
+    title: '아침 회의',
+    date: '2025-02-01',
+    startTime: '09:00',
+    endTime: '10:00',
+    description: '팀 미팅',
+    location: '장소 1',
+    category: '회의',
+    repeat: { type: 'none', interval: 0 },
+    notificationTime: 30,
+  },
+  {
+    id: '2',
+    title: '점심회의',
+    date: '2025-02-05',
+    startTime: '11:00',
+    endTime: '12:00',
+    description: '부서 회의',
+    location: '장소 2',
+    category: '회의',
+    repeat: { type: 'none', interval: 0 },
+    notificationTime: 30,
+  },
+  {
+    id: '3',
+    title: '아침회의',
+    date: '2025-02-06',
+    startTime: '10:00',
+    endTime: '11:00',
+    description: '팀 미팅',
+    location: '장소 3',
+    category: '미팅',
+    repeat: { type: 'none', interval: 0 },
+    notificationTime: 15,
+  },
+];
+
+describe('useEventOperations', () => {
+  it('저장되어있는 초기 이벤트 데이터를 적절하게 불러온다', async () => {});
+});
 
 it('정의된 이벤트 정보를 기준으로 적절하게 저장이 된다', async () => {});
 
