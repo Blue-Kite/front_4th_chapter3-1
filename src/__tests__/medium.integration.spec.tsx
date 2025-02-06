@@ -1,17 +1,15 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import { render, screen, within, waitFor } from '@testing-library/react';
 import { type UserEvent, userEvent } from '@testing-library/user-event';
-
 import { ReactElement } from 'react';
 
-import App from '../App';
-
-import { Event, EventForm } from '../types';
 import {
   setupMockHandlerCreation,
   setupMockHandlerDeletion,
   setupMockHandlerUpdating,
 } from '../__mocks__/handlersUtils';
+import App from '../App';
+import { Event, EventForm } from '../types';
 
 const setup = (element: ReactElement) => {
   const rendered = render(<ChakraProvider>{element}</ChakraProvider>);

@@ -1,4 +1,5 @@
 import { http, HttpResponse } from 'msw';
+
 import { server } from '../setupTests';
 import { Event } from '../types';
 

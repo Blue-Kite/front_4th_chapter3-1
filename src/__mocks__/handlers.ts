@@ -11,17 +11,10 @@ export const mockApiHandlers = [
   }),
 
   http.post('/api/events', async ({ request }) => {
-    const data = (await request.json()) as Event;
-    const { id: _, ...eventData } = data;
-    return HttpResponse.json(
-      {
-        event: {
-          eventData,
-          id: String(events.length + 1),
-        },
-      },
-      { status: 201 }
-    );
+    const newEvent = (await request.json()) as Event;
+    newEvent.id = String(events.length + 1);
+
+    return HttpResponse.json(newEvent, { status: 201 });
   }),
 
   http.put('/api/events/:id', async ({ params, request }) => {
