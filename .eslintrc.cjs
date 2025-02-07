@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  plugins: ['react', 'react-hooks', 'prettier'],
+  plugins: ['react', 'react-hooks', 'prettier', '@typescript-eslint'],
   extends: [
     'eslint:recommended',
     'plugin:react-hooks/recommended',
@@ -8,6 +8,7 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:cypress/recommended',
     'plugin:import/warnings',
+    'plugin:@typescript-eslint/recommended',
   ],
   env: {
     browser: true,
@@ -20,7 +21,8 @@ module.exports = {
     ecmaVersion: 2022,
   },
   rules: {
-    'no-unused-vars': 'warn',
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'error',
     'react/prop-types': 'off',
     'import/order': [
       'error',
