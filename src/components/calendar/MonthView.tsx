@@ -13,6 +13,7 @@ import {
   HStack,
 } from '@chakra-ui/react';
 
+import { WEEK_DAYS } from '../../constants';
 import { Event } from '../../types';
 import { formatDate, formatMonth, getEventsForDay, getWeeksAtMonth } from '../../utils/dateUtils';
 
@@ -20,17 +21,10 @@ interface MonthViewProps {
   currentDate: Date;
   events: Event[];
   notifiedEvents: string[];
-  weekDays: string[];
   holidays: Record<string, string>;
 }
 
-export const MonthView = ({
-  currentDate,
-  events,
-  notifiedEvents,
-  weekDays,
-  holidays,
-}: MonthViewProps) => {
+export const MonthView = ({ currentDate, events, notifiedEvents, holidays }: MonthViewProps) => {
   const weeks = getWeeksAtMonth(currentDate);
 
   return (
@@ -39,7 +33,7 @@ export const MonthView = ({
       <Table variant="simple" w="full">
         <Thead>
           <Tr>
-            {weekDays.map((day) => (
+            {WEEK_DAYS.map((day) => (
               <Th key={day} width="14.28%">
                 {day}
               </Th>
