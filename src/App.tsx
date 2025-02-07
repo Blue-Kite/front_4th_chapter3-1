@@ -7,7 +7,7 @@ import { WeekView } from './components/calendar/WeekView.tsx';
 import { EventOverlapDialog } from './components/dialog/EventOverlapDialog.tsx';
 import { EventFormEditor } from './components/event/EventFormEditor.tsx';
 import { EventSearch } from './components/event/EventSearch.tsx';
-import { Notifications } from './components/notification/Notification.tsx';
+import { Notifications } from './components/notification/Notifications.tsx';
 import { useCalendarView } from './hooks/useCalendarView.ts';
 import { useEventForm } from './hooks/useEventForm.ts';
 import { useEventOperations } from './hooks/useEventOperations.ts';
